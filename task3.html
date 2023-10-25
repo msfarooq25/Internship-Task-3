@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./task3.css" rel="stylesheet">
+    <title>Task 3</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="nav">
+    <label for="name">FULL NAME:</label>
+    <input type="text" id="name" name="FULL NAME" required>
+    <label for="mail">EMAIL:</label>
+    <input type="email" id="mail" name="EMAIL" required>
+    <label for="password">PASSWORD</label>
+    <input type="password" id="password" >
+    <span id="strength"></span>
+    <input type="password" id="confirm" placeholder="confirm password">
+    <label for="dob">DOB</label>
+    <input type="date" id="dob">
+    <label class="gender">GENDER:</label><br>
+	<input type="radio" name="gender" value="male" required ><label class="male">male</label><br>
+	<input type="radio" name="gender" value="female" required class="female"><label class="fem">female</label><br>
+    <div class="file"><label for="file">PROFILE PICTURE</label>
+    <input type="file" id="file" value="PROFILE PICTURE"></div>
+    <input type="checkbox"><label>I agree to the terms and conditions.</label>
+    <button type="submit" class="btn">Submit</button>
+    </nav>
+    </div>
+    <script>
+         var str=document.getElementById("strength")
+        var pass=document.getElementById("password");
+        pass.addEventListener('input', () =>{
+            if(pass.value.length<1){
+                str.innerHTML=""
+            }
+            else if(pass.value.length <= 4)
+            {
+                str.innerHTML= 'weak password'
+                str.style.color='red'
+            }
+            else if(pass.value.length<=8){
+                str.innerHTML='medium password'
+                str.style.color='orange'
+            }
+            else {
+                str.innerHTML='strong password'
+                str.style.color='green'
+            }
+           
+        })
+
+
+    
+    </script>
+</body>
+</html>
